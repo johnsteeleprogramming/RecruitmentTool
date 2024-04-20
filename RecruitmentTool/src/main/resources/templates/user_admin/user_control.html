@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>User Control - Business Name Here</title>
+	<!-- 	<link rel="shortcut icon" th:href="@{/images/favicon.ico}">   -->
+	<!-- Work on this later -->
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}" />
+	<script type="text/javascript" th:src="@{/js/javascript.js}"></script>
+</head>
+<body>
+	<div th:replace="~{/user_admin/fragments/navbar::navbar}"></div>
+	<div class="container text-center">
+		<h3>User Control</h3>
+	</div>
+	<footer th:replace="~{/user_admin/fragments/footer::footer}"></footer>
+</body>
+</html>
+
+<!-- HELPFUL CODE FOR LATER
+<div th:replace="fragments/footer :: ${#authentication.principal.isAdmin()} ? 'footer-admin' : 'footer'">
+Create email templates: https://www.youtube.com/watch?v=bezhB_76ofE
+ -->

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signed Up - Business Name Here</title>
+<!-- 	<link rel="shortcut icon" th:href="@{/images/favicon.ico}">   -->
+<!-- Work on this later -->
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}" />
+<script type="text/javascript" th:src="@{/js/javascript.js}"></script>
+</head>
+<body>
+	<div th:replace="~{/user_admin/fragments/navbar::navbar}"></div>
+	<div class="container text-center">
+		<h3>Signed Up</h3>
+	</div>
+	<div>
+		<table class="table table-hover table-sm list-signups">
+			<thead>
+				<tr>
+					<th scope="col">Email Address</th>
+					<th scope="col">Phone Number</th>
+					<th scope="col">Name</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="signup: ${signUps}">
+					<td th:text="${signup.emailAddress}">n/a</td>
+					<td th:text="${signup.phoneNumber}">n/a</td>
+					<td th:text="${signup.firstName} + ' ' + ${signup.lastName}">n/a</td>
+					<td><a th:href="'mailto:' + ${signup.emailAddress}">
+							<img th:src="@{/icons/envelope-regular.svg}" alt="envelope-regular" width="15px"/>
+						</a>
+						<a th:href="@{/editSignUp/{id}(id=${signup.signUpId})}">
+							<img th:src="@{/icons/signup-profile.svg}" alt="signup-profile" width="15px"/>
+						</a>
+						<a style="color:red" th:href="@{/deleteSignUp/{id}(id=${signup.signUpId})}">
+							<img th:src="@{/icons/trash-can.svg}" alt="trash-can" width="15px"/>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<footer th:replace="~{/user_admin/fragments/footer::footer}"></footer>
+</body>
+</html>
+
+<!-- HELPFUL CODE FOR LATER
+<div th:replace="fragments/footer :: ${#authentication.principal.isAdmin()} ? 'footer-admin' : 'footer'">
+Create email templates: https://www.youtube.com/watch?v=bezhB_76ofE
+ -->

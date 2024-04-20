@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Sign Up Successful! - Business Name Here</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}" />
+	<script type="text/javascript" th:src="@{/js/javascript.js}"></script>
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+			<h3>You have successfully signing up, </h3><span th:text="${signup.firstName}"></span><h3>!</h3>
+			<h5>We look forward to getting to know you better.</h5>
+			<h5>We will contact you shortly.</h5>
+			<h6>Page will redirect in 10 seconds.</h6>
+		</div>
+	</div>
+	<div>
+		<script>
+			window.onload=redirectAfterTime("/", 10);
+		</script>
+	</div>
+</body>
+</html>

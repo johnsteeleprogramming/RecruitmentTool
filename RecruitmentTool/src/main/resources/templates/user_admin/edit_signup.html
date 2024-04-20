@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Edit SignUpBusiness Name Here</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<div th:replace="~{/user_admin/fragments/navbar::navbar}"></div>
+	<div class="container text-center">
+		<h3>Edit SignUp</h3>
+		<h5>
+			<span th:text="${signup.firstName} + ' ' + ${signup.lastName}"></span>
+		</h5>
+	</div>
+	<div style="margin: 30px">
+		<form th:action="@{/editSignUp}" method="post" style="max-width: 600px; margin: auto;" th:object="${signup}">
+			<div class="m-3">
+				<div class="form-group row">
+					<label class="col-form-label col-4">Email Address</label>
+					<div class="col-8">
+						<input type="email" class="form-control" th:field="*{emailAddress}" required />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-4">Phone Number</label>
+					<div class="col-8">
+						<input type="text" class="form-control" th:field="*{phoneNumber}" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-4">First Name</label>
+					<div class="col-8">
+						<input type="text" class="form-control" th:field="*{firstName}" required />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-4">Last Name</label>
+					<div class="col-8">
+						<input type="text" class="form-control" th:field="*{lastName}" required />
+					</div>
+				</div>
+				<div class="container text-center">
+					<button type="submit" class="btn btn-primary">Save Changes</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<footer th:replace="~{/user_admin/fragments/footer::footer}"></footer>
+</body>
+</html>
