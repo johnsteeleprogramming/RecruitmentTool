@@ -1,8 +1,30 @@
-Project Name:  Recruitment Tool
-Technologies used:  Spring Tool Suite 4, Spring Boot, Java, MySQL, Thymeleaf, HTML, CSS, JavaScript, and BootStrap.
-How to install and run project:  
-Within Spring Tool Suite 4 (or Eclipse if you have installed Spring Boot tools), download the project using this projects URI.
-Within MySQL, create a database called "recruitment_tool".  You can change this, but be sure to edit the application.properties file.
-Within MySQL, run the SQL script that is located in the root directory of this project called "recruitment_tool_sql_script".
-Within Spring Tool Suite, run the project.  Open a browser and go to localhost:8080 to see the signup page and verify the project is running.
+# Recruitment Tool
 
+This project is to be used at recruitment fairs.  This project has two purposes.
+- The first purpose is open this project on a laptop or tablet so that any potential employee can leave their contact info.
+- The second purpose is there is an managemet page for HR and recruiters to pull up those signups and contact them about future employment.
+
+
+## Authors
+- John Steele
+- https://www.github.com/johnsteeleprogramming
+## Tech Stack
+
+**Client:** HTML, CSS, JavaScript, BootStrap
+
+**Server:** Spring Boot, Java, MySQL, Thymeleaf
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://https://github.com/johnsteeleprogramming/RecruitmentTool/
+```
+- Run the SQL script 'recruitment_tool_sql_script.sql' in MySQL.
+- Once the programming is running locally, there are two components.
+
+**SignUps** In a browser, go to localhost:8080.  Signups can submit their contact info.
+
+**Recruiters** In a browser, go to localhost:8080/admin.  There is login credentials required.  There is a page with signups listed and options to edit, delete, export, email, and send to another program using APIs.  There are many other options as well.
