@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="ISO-8859-1">
-	<title>Edit SignUpBusiness Name Here</title>
-	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}" />
-</head>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:replace="~{/user_admin/fragments :: head}"></head>
+
 <body>
-	<div th:replace="~{/user_admin/fragments/navbar::navbar}"></div>
+	<div th:replace="~{/user_admin/fragments :: navigation_bar}"></div>
 	<div class="container text-center">
 		<h3>Edit SignUp</h3>
 		<h5>
@@ -47,6 +46,6 @@
 			</div>
 		</form>
 	</div>
-	<footer th:replace="~{/user_admin/fragments/footer::footer}"></footer>
+	<footer th:replace="~{/user_admin/fragments :: footer}"></footer>
 </body>
 </html>

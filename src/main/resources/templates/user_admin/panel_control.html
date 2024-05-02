@@ -2,26 +2,17 @@
 <html lang="en" 
 	xmlns:th="http://www.thymeleaf.org" 
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-	<meta charset="ISO-8859-1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Panel Control - Business Name Here</title>
-	<!-- 	<link rel="shortcut icon" th:href="@{/images/favicon.ico}">   -->
-	<!-- Work on this later -->
-	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}" />
-	<script type="text/javascript" th:src="@{/js/javascript.js}"></script>
-</head>
+
+<head th:replace="~{/user_admin/fragments :: head}"></head>
+
 <body>
-	<div th:replace="~{/user_admin/fragments/navbar::navbar}"></div>
+	<div th:replace="~{/user_admin/fragments :: navigation_bar}"></div>
+	
 	<div class="container text-center">
+		<h1 th:text="${businessName}"></h1>
 		<h3>Panel Control</h3>
 	</div>
-	<footer th:replace="~{/user_admin/fragments/footer::footer}"></footer>
+	
+	<footer th:replace="~{/user_admin/fragments :: footer}"></footer>
 </body>
 </html>
-
-<!-- HELPFUL CODE FOR LATER
-<div th:replace="fragments/footer :: ${#authentication.principal.isAdmin()} ? 'footer-admin' : 'footer'">
-Create email templates: https://www.youtube.com/watch?v=bezhB_76ofE
- -->

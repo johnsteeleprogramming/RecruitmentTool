@@ -48,6 +48,7 @@ public class RecruitmentController {
 	public String signedUp(Model model) {
 		List<SignUp> signUps = signUpRepository.findAll();
 		model.addAttribute("signUps", signUps);
+		model.addAttribute("businessName", businessName);
 		return "/user_admin/signed_up";
 	}
 	
@@ -55,21 +56,25 @@ public class RecruitmentController {
 	public String editSignUp(@PathVariable("id")long id, Model model) {
 		SignUp signUp = signUpRepository.findById(id).get();
 		model.addAttribute("signup", signUp);
+		model.addAttribute("businessName", businessName);
 		return "/user_admin/edit_signup";
 	}
 	
 	@GetMapping("/panel_control")
-	public String panelControl() {
+	public String panelControl(Model model) {
+		model.addAttribute("businessName", businessName);
 		return "/user_admin/panel_control";
 	}
 	
 	@GetMapping("/user_control")
-	public String userControl() {
+	public String userControl(Model model) {
+		model.addAttribute("businessName", businessName);
 		return "/user_admin/user_control";
 	}
 	
 	@GetMapping("/my_profile")
-	public String myProfile() {
+	public String myProfile(Model model) {
+		model.addAttribute("businessName", businessName);
 		return "/user_admin/my_profile";
 	}
 
