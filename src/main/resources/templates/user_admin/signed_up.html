@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head th:replace="~{/user_admin/fragments :: head}"></head>
 
 <body>
-	<div th:replace="~{/user_admin/fragments/navbar::navbar}"></div>
+	<div th:replace="~{/user_admin/fragments :: navigation_bar}"></div>
 	<div class="container text-center">
+		<h1 th:text="${businessName}"></h1>
 		<h3>Signed Up</h3>
 	</div>
 	<div>
@@ -24,20 +27,20 @@
 					<td th:text="${signup.phoneNumber}">n/a</td>
 					<td th:text="${signup.firstName} + ' ' + ${signup.lastName}">n/a</td>
 					<td><a th:href="'mailto:' + ${signup.emailAddress}">
-							<img th:src="@{/icons/envelope-regular.svg}" alt="envelope-regular" width="15px"/>
-						</a>
-						<a th:href="@{/editSignUp/{id}(id=${signup.signUpId})}">
-							<img th:src="@{/icons/signup-profile.svg}" alt="signup-profile" width="15px"/>
-						</a>
-						<a style="color:red" th:href="@{/deleteSignUp/{id}(id=${signup.signUpId})}">
-							<img th:src="@{/icons/trash-can.svg}" alt="trash-can" width="15px"/>
-						</a>
+						<img th:src="@{/icons/envelope-regular.svg}" alt="envelope-regular" width="15px" />
+					</a>
+					<a th:href="@{/editSignUp/{id}(id=${signup.signUpId})}"> 
+						<img th:src="@{/icons/signup-profile.svg}" alt="signup-profile"	width="15px" />
+					</a>
+					<a style="color: red" th:href="@{/deleteSignUp/{id}(id=${signup.signUpId})}">
+						<img th:src="@{/icons/trash-can.svg}" alt="trash-can" width="15px" />
+					</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<footer th:replace="~{/user_admin/fragments/footer::footer}"></footer>
+	<footer th:replace="~{/user_admin/fragments :: footer}"></footer>
 </body>
 </html>
 
