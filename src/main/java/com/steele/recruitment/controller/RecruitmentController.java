@@ -17,6 +17,8 @@ public class RecruitmentController {
 
 	@Autowired
 	private SignUpRepository signUpRepository;
+	
+	private String businessName = "Your business name here";
 
 	@GetMapping({"/", "/index", "/signup"})
 	public String index(Model model) {
@@ -37,7 +39,8 @@ public class RecruitmentController {
 	}
 	
 	@GetMapping({"/admin", "/user_admin"})
-	public String admin() {
+	public String admin(Model model) {
+		model.addAttribute("businessName", businessName);
 		return "/user_admin/admin";
 	}
 	
