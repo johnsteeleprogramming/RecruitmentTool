@@ -15,7 +15,7 @@ public class SignUpController {
 	private SignUpRepository signUpRepository;
 	
 	@RequestMapping("/editSignUp")
-	public String deleteBook(SignUp signUp) {
+	public String editSignUp(SignUp signUp) {
 		System.out.println("saving changes ...");
 		signUp.displaySignUpInfoToConsole();
 		signUpRepository.save(signUp);
