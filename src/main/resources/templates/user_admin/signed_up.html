@@ -17,7 +17,6 @@
 		<table class="signup-table">
 			<thead>
 				<tr>
-					<th>Database ID</th>
 					<th>Email Address</th>
 					<th>Phone Number</th>
 					<th>Name</th>
@@ -26,7 +25,6 @@
 			</thead>
 			<tbody>		<!-- class="signup-table-tbody" -->
 				<tr th:each="signup: ${signUps}">
-					<td th:text="${signup.signUpId}"></td>
 					<td th:text="${signup.emailAddress}"></td>
 					<td th:text="${signup.phoneNumber}"></td>
 					<td th:text="${signup.firstName} + ' ' + ${signup.lastName}"></td>
