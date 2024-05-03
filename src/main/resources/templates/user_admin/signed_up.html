@@ -7,34 +7,37 @@
 
 <body>
 	<div th:replace="~{/user_admin/fragments :: navigation_bar}"></div>
-	<div class="container text-center">
+	
+	<div class="container text-center pagetitles">
 		<h1 th:text="${businessName}"></h1>
 		<h3>Signed Up</h3>
 	</div>
-	<div>
-		<table class="table table-hover table-sm list-signups">
+	
+	<div class="content">
+		<table class="signup-table">
 			<thead>
 				<tr>
-					<th scope="col">Email Address</th>
-					<th scope="col">Phone Number</th>
-					<th scope="col">Name</th>
-					<th scope="col">Action</th>
+					<th>Email Address</th>
+					<th>Phone Number</th>
+					<th>Name</th>
+					<th>Action</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody>		<!-- class="signup-table-tbody" -->
 				<tr th:each="signup: ${signUps}">
-					<td th:text="${signup.emailAddress}">n/a</td>
-					<td th:text="${signup.phoneNumber}">n/a</td>
-					<td th:text="${signup.firstName} + ' ' + ${signup.lastName}">n/a</td>
-					<td><a th:href="'mailto:' + ${signup.emailAddress}">
-						<img th:src="@{/icons/envelope-regular.svg}" alt="envelope-regular" width="15px" />
-					</a>
-					<a th:href="@{/editSignUp/{id}(id=${signup.signUpId})}"> 
-						<img th:src="@{/icons/signup-profile.svg}" alt="signup-profile"	width="15px" />
-					</a>
-					<a style="color: red" th:href="@{/deleteSignUp/{id}(id=${signup.signUpId})}">
-						<img th:src="@{/icons/trash-can.svg}" alt="trash-can" width="15px" />
-					</a>
+					<td th:text="${signup.emailAddress}"></td>
+					<td th:text="${signup.phoneNumber}"></td>
+					<td th:text="${signup.firstName} + ' ' + ${signup.lastName}"></td>
+					<td class="signup-table-icons">
+						<a th:href="'mailto:' + ${signup.emailAddress}">
+							<img th:src="@{/icons/envelope-regular.svg}" alt="envelope-regular"/>
+						</a>
+						<a th:href="@{/editSignUp/{id}(id=${signup.signUpId})}"> 
+							<img th:src="@{/icons/signup-profile.svg}" alt="signup-profile"/>
+						</a>
+						<a th:href="@{/deleteSignUp/{id}(id=${signup.signUpId})}">
+							<img th:src="@{/icons/trash-can.svg}" alt="trash-can"/>
+						</a>
 					</td>
 				</tr>
 			</tbody>
