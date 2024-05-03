@@ -15,7 +15,7 @@
 	</div>
 	
 	<div class="edit-sign-up">
-		<form th:action="@{/editSignUp}" method="post" th:object="${signup}">
+		<form th:action="@{/updateSignUp/{id}(id=${signup.signUpId})}" method="post" th:object="${signup}">
 			<table>
 				<tr>
 					<td>Email Address</td>

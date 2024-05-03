@@ -81,6 +81,7 @@ public class SignUp {
 	
 	public void displaySignUpInfoToConsole() {
 		System.out.println("SignUp info");
+		System.out.println("ID:\t\t" + this.getSignUpId());
 		System.out.println("Email Address:\t" + this.getEmailAddress());
 		System.out.println("Phone Number:\t" + this.getPhoneNumber());
 		System.out.println("First Name:\t" + this.getFirstName());
